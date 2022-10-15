@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FragmenAndActivityKotlin</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="message">ここにflagmentをinfrateしました</string>
+    <string name="activity_title">アクテビィティ</string>
+    <string name="button_txt">フラグメントをInfrateする</string>
+    <string name="infrate_txt">これはinfrateされたfragment</string>
+</resources>
