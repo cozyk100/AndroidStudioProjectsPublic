@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/fragmentMain">
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.example.navigationkotlin.FragmentMain"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragment01"
+            app:destination="@id/fragment01"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="param1"
+                android:defaultValue="fromMain1" />
+            <argument
+                android:name="param2"
+                android:defaultValue="fromMain2" />
+        </action>
+        <action
+            android:id="@+id/action_fragmentMain_to_fragment02"
+            app:destination="@id/fragment02"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="param1"
+                android:defaultValue="fromMain1" />
+            <argument
+                android:name="param2"
+                android:defaultValue="fromMain2" />
+        </action>
+        <argument
+            android:name="param1"
+            app:argType="string" />
+        <argument android:name="param2"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment01"
+        android:name="com.example.navigationkotlin.Fragment01"
+        android:label="fragment_01"
+        tools:layout="@layout/fragment_01" >
+        <action
+            android:id="@+id/action_fragment01_to_fragment02"
+            app:destination="@id/fragment02"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="param1"
+                android:defaultValue="from01_１" />
+            <argument
+                android:name="param2"
+                android:defaultValue="from01_2" />
+        </action>
+        <action
+            android:id="@+id/action_fragment01_to_fragmentMain"
+            app:destination="@id/fragmentMain"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="param1"
+                android:defaultValue="from01_1" />
+            <argument
+                android:name="param2"
+                android:defaultValue="from01_2" />
+        </action>
+        <argument android:name="param1"
+            app:argType="string" />
+        <argument android:name="param2"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment02"
+        android:name="com.example.navigationkotlin.Fragment02"
+        android:label="fragment_02"
+        tools:layout="@layout/fragment_02" >
+        <action
+            android:id="@+id/action_fragment02_to_fragment01"
+            app:destination="@id/fragment01"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="param1"
+                android:defaultValue="from02_1" />
+            <argument
+                android:name="param2"
+                android:defaultValue="from02_2" />
+        </action>
+        <action
+            android:id="@+id/action_fragment02_to_fragmentMain"
+            app:destination="@id/fragmentMain"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="param1"
+                android:defaultValue="from02_1" />
+            <argument
+                android:name="param2"
+                android:defaultValue="from02_2" />
+        </action>
+        <argument android:name="param1"
+            app:argType="string" />
+        <argument android:name="param2"
+            app:argType="string" />
+    </fragment>
+</navigation>
