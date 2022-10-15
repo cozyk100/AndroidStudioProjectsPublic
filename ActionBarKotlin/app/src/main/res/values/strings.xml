@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ActionBar</string>
+    <string name="title1">タイトル１</string>
+    <string name="title2">タイトル２</string>
+    <string name="titleIcon">アイコン付</string>
+    <string name="title3_1">タイトル3-1</string>
+    <string name="title3_2">タイトル3-2</string>
+</resources>
