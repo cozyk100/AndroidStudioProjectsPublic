@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SpinnerNameValue</string>
+    <string name="setting">設定</string>
+    <string name="edittextHint">editText</string>
+    <string name="spinnerDesc">spinner</string>
+</resources>
