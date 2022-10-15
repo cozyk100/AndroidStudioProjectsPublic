@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ActivityArgumentKotlin</string>
+    <string name="titleMain">メインからサブへ</string>
+    <string name="editTxtMain">ここにサブに渡すメッセージを入れる</string>
+    <string name="txtMain">サブからのメッセージ</string>
+    <string name="messageTxt">メッセージ</string>
+    <string name="buttonMain">サブに移動</string>
+    <string name="titleSub">サブからメインへ</string>
+    <string name="txtSub">メインからのメッセージ</string>
+    <string name="editTxtSub">メインに渡すメッセージを入れる</string>
+    <string name="buttonSub">メインへ戻る</string>
+</resources>
