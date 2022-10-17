@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ViewBindigFragment</string>
+    <string name="button1Txt">フラグメントへ</string>
+    <string name="editTextHint">何かを入れる</string>
+    <string name="label1">メインからの引数</string>
+    <string name="label2Txt">メインのTextView</string>
+    <string name="textView3Hint">ここに引数が出る</string>
+    <string name="textView5Hint">ここにメインのTextViewが出る</string>
+    <string name="button2Txt">押してみそ</string>
+</resources>
