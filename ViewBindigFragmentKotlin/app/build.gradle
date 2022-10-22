@@ -68,5 +68,5 @@ dependencies {
     androidTestImplementation "io.mockk:mockk-android:1.13.2" // mockk
     androidTestImplementation "io.mockk:mockk-agent:1.13.2" // mockk
 
-    debugImplementation 'androidx.fragment:fragment-testing:1.5.3'
+    debugImplementation 'androidx.fragment:fragment-testing:1.5.3' // Fragment Test
 }
