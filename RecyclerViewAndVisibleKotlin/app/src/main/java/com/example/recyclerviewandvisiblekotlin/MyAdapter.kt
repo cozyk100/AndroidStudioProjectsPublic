@@ -11,6 +11,9 @@ class MyAdapter(private val data: List<List<String>>): RecyclerView.Adapter<MyAd
 
     class ViewHolder(view: View):  RecyclerView.ViewHolder(view) {
         private var binding: MyTextViewBinding
+        var isInTheMidele = false
+            get() =  field
+            set(value) { field = value}
         var list1: TextView
         var list2: TextView
         var list3: TextView
@@ -39,6 +42,11 @@ class MyAdapter(private val data: List<List<String>>): RecyclerView.Adapter<MyAd
         holder.list1.text = data[position][0]
         holder.list2.text = data[position][1]
         holder.list3.text = data[position][2]
+        if (position == data.size/2) {
+            holder.isInTheMidele = true
+        } else {
+            holder.isInTheMidele = false
+        }
     }
 
     override fun getItemCount(): Int {
