@@ -1,0 +1,2 @@
+# RevyclerViewとVisibleのサンプルkotlin
+- RevyclerViewの上下にTextViewを挟んで、TextViewのVisibleによって、RecycleViewの高さが変わるサンプル
