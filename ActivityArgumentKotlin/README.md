@@ -1,0 +1,1 @@
+#  ActivityからActivityを引数付きで呼ぶサンプルkotlin
