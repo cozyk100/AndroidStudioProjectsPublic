@@ -1,0 +1,2 @@
+# Spinnerをnameとvalueで表示するサンプルkotlin
+- SpinnerをHTMLと同じようにnameとvalueのペアで管理し、nameで表示valueで値を取得するサンプル
