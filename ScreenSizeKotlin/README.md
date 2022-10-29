@@ -1,0 +1,1 @@
+# ScreenSizeを取得するサンプルkotlin
