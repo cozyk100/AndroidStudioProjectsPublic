@@ -1,0 +1,2 @@
+# Fragment間でViewModelを共有するサンプルkotlin
+- Fragment間でViewModelを共有して、画面表示するサンプル
