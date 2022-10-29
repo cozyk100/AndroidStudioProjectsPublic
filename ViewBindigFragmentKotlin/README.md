@@ -1,0 +1,1 @@
+# viewBindingでActivityからFragmentを呼ぶ例
