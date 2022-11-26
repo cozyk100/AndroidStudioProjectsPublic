@@ -5,6 +5,7 @@ import android.os.Bundle
 
 /**
  * スプラッシュ・スクリーンの例
+ * https://developer.android.com/guide/topics/ui/splash-screen?hl=ja
  * https://qiita.com/karass/items/bcb50607c0b9fc21f183
  */
 class MainActivity : AppCompatActivity() {
