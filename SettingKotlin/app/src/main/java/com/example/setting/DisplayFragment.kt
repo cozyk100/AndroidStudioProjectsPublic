@@ -13,13 +13,6 @@ class DisplayFragment : Fragment() {
     private lateinit var binding: FragmentDisplayBinding
 
     /**
-     * Fragmentの初期化処理
-     */
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    /**
      * フラグメントの初期作成を行うために呼び出されます。
      * これは onAttach(Activity) の後、onCreateView(LayoutInflater, ViewGroup, Bundle) の前に呼び出されます。
      * これは、フラグメントのアクティビティがまだ作成中に呼び出される可能性があることに注意してください。
@@ -29,7 +22,7 @@ class DisplayFragment : Fragment() {
      * 復元された子フラグメントは、基本 Fragment.onCreate メソッドが戻る前に作成されます。
      */
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentDisplayBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,12 +36,13 @@ class DisplayFragment : Fragment() {
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val sharedPrefence = activity?.let { PreferenceManager.getDefaultSharedPreferences(it) }
-        binding.textPref.text = sharedPrefence?.getString("textPreference", "") ?: ""
-        binding.listPref.text = sharedPrefence?.getString("listPreference", "") ?: ""
-        binding.checkPref1.text = sharedPrefence?.getBoolean("checkboxPreference1", false) .toString() ?: "false"
-        binding.checkPref2.text = sharedPrefence?.getBoolean("checkboxPreference2", false) .toString() ?: "false"
-        binding.checkPref3.text = sharedPrefence?.getBoolean("checkboxPreference3", false) .toString() ?: "false"
-        binding.switchPref.text = sharedPrefence?.getBoolean("switchPreference", false) .toString() ?: "false"
+        val sharedPreference = activity?.let { PreferenceManager.getDefaultSharedPreferences(it) }
+        binding.textPref.text = sharedPreference?.getString("textPreference", "") ?: ""
+        binding.numberPref.text = sharedPreference?.getString("numberPreference", "") ?: ""
+        binding.listPref.text = sharedPreference?.getString("listPreference", "") ?: ""
+        binding.checkPref1.text = sharedPreference?.getBoolean("checkboxPreference1", false) .toString()
+        binding.checkPref2.text = sharedPreference?.getBoolean("checkboxPreference2", false) .toString()
+        binding.checkPref3.text = sharedPreference?.getBoolean("checkboxPreference3", false) .toString()
+        binding.switchPref.text = sharedPreference?.getBoolean("switchPreference", false) .toString()
     }
 }
