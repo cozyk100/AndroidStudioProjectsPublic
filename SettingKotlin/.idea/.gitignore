@@ -1,0 +1,4 @@
+# デフォルトの無視対象ファイル
+/shelf/
+/workspace.xml
+/ktfmt.xml

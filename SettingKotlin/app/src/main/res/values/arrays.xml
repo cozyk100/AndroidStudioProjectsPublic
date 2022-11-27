@@ -1,0 +1,13 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="list_entries">
+        <item>設定1</item>
+        <item>設定2</item>
+        <item>設定3</item>
+    </string-array>
+    <string-array name="list_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Setting</string>
+    <!-- Preference Titles -->
+    <string name="textCatTitle">テキスト入力</string>
+    <string name="textPrefTitle">テキストの設定値</string>
+    <string name="listCatTitle">リストで入力</string>
+    <string name="listPrefTitle">リストの設定値</string>
+    <string name="checkCatTitle">チェックボックスで入力</string>
+    <string name="switchCatTitle">スィッチで入力</string>
+    <string name="switchPrefTitle">スィッチの設置値</string>
+    <string name="summaryOn">オン</string>
+    <string name="summaryOff">オフ</string>
+    <string name="checkPrefTtile1">チェック1</string>
+    <string name="checkPrefTtile2">チェック2</string>
+    <string name="checkPrefTtile3">チェック3</string>
+    <string name="numberCatTitle">数値のみ入力</string>
+    <string name="numberPrefTitle">数値の設定値</string>
+</resources>

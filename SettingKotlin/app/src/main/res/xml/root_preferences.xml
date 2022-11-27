@@ -1,0 +1,58 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/textCatTitle">
+
+        <EditTextPreference
+            app:key="textPreference"
+            app:title="@string/textPrefTitle"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/numberCatTitle">
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:key="numberPreference"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/numberPrefTitle"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/listCatTitle">
+
+        <ListPreference
+            app:entries="@array/list_entries"
+            app:entryValues="@array/list_values"
+            app:key="listPreference"
+            app:title="@string/listPrefTitle"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/checkCatTitle">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="checkboxPreference1"
+            android:title="@string/checkPrefTtile1" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="checkboxPreference2"
+            android:title="@string/checkPrefTtile2" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="checkboxPreference3"
+            android:title="@string/checkPrefTtile3" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/switchCatTitle">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="switchPreference"
+            app:summaryOff="@string/summaryOff"
+            app:summaryOn="@string/summaryOn"
+            app:title="@string/switchPrefTitle" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
