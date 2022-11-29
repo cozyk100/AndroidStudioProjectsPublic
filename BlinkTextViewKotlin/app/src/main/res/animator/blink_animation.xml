@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- see https://developer.android.com/guide/topics/resources/animation-resource?hl=ja#Property -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+        android:propertyName="alpha"
+        android:duration="500"
+        android:valueTo="0.5f"
+        android:repeatCount="-1"
+        android:repeatMode="reverse"/>
+</set>
