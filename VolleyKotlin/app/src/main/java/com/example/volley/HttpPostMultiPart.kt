@@ -11,14 +11,29 @@ import org.apache.http.entity.mime.MultipartEntityBuilder
 import org.apache.http.entity.mime.content.StringBody
 import java.io.ByteArrayOutputStream
 import java.io.File
+import java.net.CookieHandler
+import java.net.CookieManager
+import java.net.CookiePolicy
+import java.net.CookieStore
 
 /**
  * VolleyでHTTP POSTでMultipartで送信するサンプル
  */
 class HttpPostMultiPart(private val context: Context) {
 
+    /** CookieStore */
+    private var cookieStore: CookieStore
+    /** CookieManager */
+    private var cookieManager: CookieManager = CookieManager()
+
     companion object {
         const val TAG = "HttpPost"
+    }
+
+    init {
+        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ORIGINAL_SERVER)
+        CookieHandler.setDefault(cookieManager)
+        cookieStore = cookieManager.cookieStore
     }
 
     /** VolleyのQueue */
@@ -36,6 +51,9 @@ class HttpPostMultiPart(private val context: Context) {
             // Response.Listener、Upload成功
             { response ->
                 Log.d(TAG, "アップロード成功:\n $response")
+                cookieStore.cookies.forEach { cookie ->
+                    Log.d(TAG, "name = $cookie.name, value = ${cookie.value}")
+                }
                 Toast.makeText(context, "ファイルのアップロードが完了しました。:${url}", Toast.LENGTH_LONG).show()
             },
             // Response.ErrorListener、Upload失敗
@@ -67,7 +85,7 @@ class HttpPostMultiPart(private val context: Context) {
     ) : Request<String?>(Method.POST, url, errorListener) {
         private lateinit var httpEntity: HttpEntity
         private var entity = MultipartEntityBuilder.create()
-            .setCharset(charset("Shift_JIS"))
+            .setCharset(Charsets.UTF_8)
 
         /**
          * 初期化
@@ -77,6 +95,10 @@ class HttpPostMultiPart(private val context: Context) {
             // Connection timeout, Read Timeout
             retryPolicy =
                 DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
+        }
+
+        override fun getHeaders(): MutableMap<String, String> {
+            return super.getHeaders()
         }
 
         /**
@@ -124,7 +146,8 @@ class HttpPostMultiPart(private val context: Context) {
          * @return パースされたレスポンス
          */
         override fun parseNetworkResponse(response: NetworkResponse?): Response<String?>? {
-            return Response.success("Uploaded", cacheEntry)
+            val resBody = response?.let { String(it.data, Charsets.UTF_8) } ?: ""
+            return Response.success(resBody, cacheEntry)
         }
 
         /**
