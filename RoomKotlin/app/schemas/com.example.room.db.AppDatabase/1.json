@@ -1,0 +1,83 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "04aa06993e9af37550ae8006c6bdb22a",
+    "entities": [
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `first_name` TEXT, `last_name` TEXT, `dept_cd` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "uid",
+            "columnName": "uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstName",
+            "columnName": "first_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastName",
+            "columnName": "last_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "deptCd",
+            "columnName": "dept_cd",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Dept",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`dept_cd` TEXT NOT NULL, `dept_name` TEXT, PRIMARY KEY(`dept_cd`))",
+        "fields": [
+          {
+            "fieldPath": "deptCd",
+            "columnName": "dept_cd",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deptName",
+            "columnName": "dept_name",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "dept_cd"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [
+      {
+        "viewName": "User_view",
+        "createSql": "CREATE VIEW `${VIEW_NAME}` AS select user.uid, user.first_name, user.last_name, dept.dept_name from user \n        left outer join dept on (user.dept_cd = dept.dept_cd)"
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '04aa06993e9af37550ae8006c6bdb22a')"
+    ]
+  }
+}

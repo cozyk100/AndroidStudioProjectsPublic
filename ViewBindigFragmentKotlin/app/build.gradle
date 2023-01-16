@@ -30,12 +30,14 @@ android {
         jvmTarget = '1.8'
     }
     packagingOptions {
-        exclude 'META-INF/LICENSE.md'
-        exclude 'META-INF/LICENSE-notice.md'
+        resources {
+            excludes += ['META-INF/LICENSE.md', 'META-INF/LICENSE-notice.md']
+        }
     }
     viewBinding {
         enabled = true
     }
+    namespace 'com.example.viewbindigfragment'
 }
 
 dependencies {
