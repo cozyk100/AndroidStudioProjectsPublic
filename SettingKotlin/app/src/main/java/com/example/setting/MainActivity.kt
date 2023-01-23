@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.preference.PreferenceManager
 import com.example.setting.databinding.ActivityMainBinding
 
 /**
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(this.root)
         }
+        // SharedPreferenceのデフォルトチをxmlから取得して書き込み
+        PreferenceManager.setDefaultValues(applicationContext, R.xml.root_preferences, false)
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragmentContainerView, DisplayFragment())
