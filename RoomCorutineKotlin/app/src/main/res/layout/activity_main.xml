@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D1C4E9"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#F0F4C3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="240dp"
+        android:text="first_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="last_name"
+        app:layout_constraintStart_toEndOf="@+id/label1"
+        app:layout_constraintTop_toTopOf="@+id/label1" />
+
+    <TextView
+        android:id="@+id/label3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="dept_cd"
+        app:layout_constraintStart_toEndOf="@+id/label2"
+        app:layout_constraintTop_toTopOf="@+id/label2" />
+
+    <EditText
+        android:id="@+id/editTextFirstName"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:background="#B2DFDB"
+        android:ems="10"
+        android:hint="firstName"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/label1"
+        app:layout_constraintTop_toBottomOf="@+id/label1" />
+
+    <EditText
+        android:id="@+id/editTextLastName"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:background="#B2DFDB"
+        android:ems="10"
+        android:hint="lastName"
+        android:inputType="textPersonName|text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextFirstName"
+        app:layout_constraintStart_toStartOf="@+id/label2" />
+
+    <EditText
+        android:id="@+id/editTextUserDept"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:background="#B2DFDB"
+        android:ems="10"
+        android:hint="deptCd"
+        android:inputType="number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextLastName"
+        app:layout_constraintStart_toStartOf="@+id/label3" />
+
+    <Button
+        android:id="@+id/userAddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="追加"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextUserDept"
+        app:layout_constraintTop_toTopOf="@+id/editTextUserDept" />
+
+    <TextView
+        android:id="@+id/label4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="dept_cd"
+        app:layout_constraintStart_toStartOf="@+id/label1"
+        app:layout_constraintTop_toBottomOf="@+id/label1" />
+
+    <TextView
+        android:id="@+id/label5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dept_name"
+        app:layout_constraintStart_toStartOf="@+id/label2"
+        app:layout_constraintTop_toTopOf="@+id/label4" />
+
+    <EditText
+        android:id="@+id/editTextDeptCd"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="#B2DFDB"
+        android:ems="10"
+        android:hint="deptCd"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/label4"
+        app:layout_constraintTop_toBottomOf="@+id/label4" />
+
+    <EditText
+        android:id="@+id/editTextDeptName"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:background="#B2DFDB"
+        android:ems="10"
+        android:hint="deptName"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextDeptCd"
+        app:layout_constraintStart_toStartOf="@+id/label5" />
+
+    <Button
+        android:id="@+id/deptAddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="追加"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextDeptName"
+        app:layout_constraintTop_toTopOf="@+id/editTextDeptName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
