@@ -1,0 +1,1 @@
+＃ AndroidX SplashScreen 互換性ライブラリを使ったsplash screenの例
