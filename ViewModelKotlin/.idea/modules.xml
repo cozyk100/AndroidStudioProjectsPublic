@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ViewModelKotlin.iml" filepath="$PROJECT_DIR$/.idea/ViewModelKotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ViewModelKotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/ViewModelKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ViewModelKotlin.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ViewModelKotlin.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ViewModelKotlin.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ViewModelKotlin.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ViewModelKotlin.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ViewModelKotlin.app.main.iml" />

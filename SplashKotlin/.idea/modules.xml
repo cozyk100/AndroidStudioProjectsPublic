@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SplashKotlin.iml" filepath="$PROJECT_DIR$/.idea/SplashKotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SplashKotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/SplashKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SplashKotlin.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SplashKotlin.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SplashKotlin.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SplashKotlin.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SplashKotlin.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SplashKotlin.app.main.iml" />
