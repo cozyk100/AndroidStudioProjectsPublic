@@ -2,12 +2,13 @@ package com.example.actionbar
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuProvider
 import com.example.actionbar.databinding.ActivityMainBinding
 
 /**
@@ -30,38 +31,53 @@ class MainActivity : AppCompatActivity() {
         // ActionBarの色とタイトルを変えてみる
         supportActionBar?.setTitle("あー、ほげほげ")
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.GREEN)) // アプリバーを緑にする
+        setupMenuBar()
     }
 
     /**
-     * ActionBarにメニューをインフレートしてやる
+     * ActionBarのメニューの設定
      */
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_sample, menu)
-        return true
-    }
+    private fun setupMenuBar() {
+            // TODO Fragmentの場合
+            // val menuHost: MenuHost = requireActivity()
+            // menuHost.addMenuProvider(object : MenuProvider {
 
-    /**
-     * メニューが選択された場合のハンドラ
-     */
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.iconItem -> {
-                Toast.makeText(this, "アイコン付が選択されました", Toast.LENGTH_SHORT).show()
+            addMenuProvider(object : MenuProvider {
+            /**
+             * MenuProvider が MenuItem をメニューにインフレートできるようにするために、MenuHost によって呼び出されます。
+             * @param[menu] 新しいメニュー項目をインフレートするメニュー
+             * @param[menuInflater] 更新されたメニューをインフレートさせるために使用されるインフレーター
+             */
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_sample, menu)  // TODO Fragmentの場合はinflateしなくていい
             }
-            R.id.menu_item1 -> {
-                Toast.makeText(this, "アイテム１が選択されました", Toast.LENGTH_SHORT).show()
+
+            /**
+             * MenuItem がメニューから選択されると、MenuHost によって呼び出されます。
+             * @param[item] 押されたメニュー
+             * @return 指定されたメニュー項目がこのメニュー プロバイダーによって処理される場合は true、それ以外の場合は false
+             */
+            override fun onMenuItemSelected(item: MenuItem): Boolean {
+                when (item.itemId) {
+                    R.id.iconItem -> {
+                        Toast.makeText(this@MainActivity, "アイコン付が選択されました", Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.menu_item1 -> {
+                        Toast.makeText(this@MainActivity, "アイテム１が選択されました", Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.menu_item2 -> {
+                        Toast.makeText(this@MainActivity, "アイテム２が選択されました", Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.menu_item3_1 -> {
+                        Toast.makeText(this@MainActivity, "アイテム３−１が選択されました", Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.menu_item3_2 -> {
+                        Toast.makeText(this@MainActivity, "アイテム３−２が選択されました", Toast.LENGTH_SHORT).show()
+                    }
+                    else -> {}
+                }
+                return true
             }
-            R.id.menu_item2 -> {
-                Toast.makeText(this, "アイテム２が選択されました", Toast.LENGTH_SHORT).show()
-            }
-            R.id.menu_item3_1 -> {
-                Toast.makeText(this, "アイテム３−１が選択されました", Toast.LENGTH_SHORT).show()
-            }
-            R.id.menu_item3_2 -> {
-                    Toast.makeText(this, "アイテム３−２が選択されました", Toast.LENGTH_SHORT).show()
-            }
-            else -> {}
-        }
-        return true
+        })
     }
 }
