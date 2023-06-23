@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
+import androidx.fragment.app.commit
 import com.example.actionbar.databinding.ActivityMainBinding
 
 /**
@@ -32,16 +33,18 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setTitle("あー、ほげほげ")
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.GREEN)) // アプリバーを緑にする
         setupMenuBar()
+
+        supportFragmentManager.commit {
+            addToBackStack(null)
+            setReorderingAllowed(true)
+            replace(R.id.fragmentContainerView, Fragment1())
+        }
     }
 
     /**
      * ActionBarのメニューの設定
      */
     private fun setupMenuBar() {
-            // TODO Fragmentの場合
-            // val menuHost: MenuHost = requireActivity()
-            // menuHost.addMenuProvider(object : MenuProvider {
-
             addMenuProvider(object : MenuProvider {
             /**
              * MenuProvider が MenuItem をメニューにインフレートできるようにするために、MenuHost によって呼び出されます。
@@ -49,7 +52,7 @@ class MainActivity : AppCompatActivity() {
              * @param[menuInflater] 更新されたメニューをインフレートさせるために使用されるインフレーター
              */
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(R.menu.menu_sample, menu)  // TODO Fragmentの場合はinflateしなくていい
+                menuInflater.inflate(R.menu.menu_sample, menu)
             }
 
             /**
@@ -59,8 +62,11 @@ class MainActivity : AppCompatActivity() {
              */
             override fun onMenuItemSelected(item: MenuItem): Boolean {
                 when (item.itemId) {
-                    R.id.iconItem -> {
-                        Toast.makeText(this@MainActivity, "アイコン付が選択されました", Toast.LENGTH_SHORT).show()
+                    R.id.iconItem1 -> {
+                        Toast.makeText(this@MainActivity, "アイコン1が選択されました", Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.iconItem2 -> {
+                        Toast.makeText(this@MainActivity, "アイコン2が選択されました", Toast.LENGTH_SHORT).show()
                     }
                     R.id.menu_item1 -> {
                         Toast.makeText(this@MainActivity, "アイテム１が選択されました", Toast.LENGTH_SHORT).show()

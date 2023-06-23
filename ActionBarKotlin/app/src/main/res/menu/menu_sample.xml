@@ -2,7 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/iconItem"
+        android:id="@+id/iconItem1"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/titleIcon"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/iconItem2"
         android:icon="@android:drawable/ic_dialog_info"
         android:title="@string/titleIcon"
         app:showAsAction="ifRoom" />
