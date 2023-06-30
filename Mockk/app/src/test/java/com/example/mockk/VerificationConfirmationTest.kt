@@ -15,7 +15,6 @@ import org.junit.Test
  * いくつかの呼び出しが検証なしで残っている場合、例外をスローします
  */
 class VerificationConfirmationTest {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

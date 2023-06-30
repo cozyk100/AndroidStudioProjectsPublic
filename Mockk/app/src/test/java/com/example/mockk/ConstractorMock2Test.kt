@@ -16,7 +16,6 @@ class ConstractorMock2Test {
         fun add(b: Int) = a + b
     }
 
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

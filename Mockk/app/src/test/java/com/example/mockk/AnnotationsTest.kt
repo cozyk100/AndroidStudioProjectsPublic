@@ -25,7 +25,7 @@ import org.junit.Test
  * この2つのフラグをオンにします。
  */
 class AnnotationsTest {
-    // とりあえず、無くても動くが、必須なのか？
+    // @BeforeでMockKAnnotations.init(this)か、どちらかが必要
     @get:Rule
     val mockkRule = MockKRule(this)
 
@@ -51,9 +51,10 @@ class AnnotationsTest {
     var trafficSystem = TrafficSystem()
 
     // Annotationの初期化にはこれが必要
-    @Before
+    // @get:Ruleを使っている場合は不要
+//    @Before
 //    fun setUp() = MockKAnnotations.init(this) // 通常
-    fun setUp() = MockKAnnotations.init(this, relaxUnitFun = true) // relaxUnitFun = true 戻り値がUnitのものだけRelaxed mockしてくれる
+//    fun setUp() = MockKAnnotations.init(this, relaxUnitFun = true) // relaxUnitFun = true 戻り値がUnitのものだけRelaxed mockしてくれる
 
     @Test
     fun calculateAddsValues1() {

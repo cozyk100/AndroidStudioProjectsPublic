@@ -17,7 +17,6 @@ import org.junit.Test
  * 参照型の場合、連鎖モックが返されます
  */
 class RelaxedMockTest {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

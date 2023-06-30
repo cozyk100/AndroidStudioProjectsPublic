@@ -15,7 +15,6 @@ import org.junit.Test
  * 時には、任意のクラスのモックが必要です。そのような場合にはmockkClassを使用してください。
  */
 class ClassMockTest {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

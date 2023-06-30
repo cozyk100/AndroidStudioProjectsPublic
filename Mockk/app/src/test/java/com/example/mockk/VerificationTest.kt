@@ -11,7 +11,6 @@ import org.junit.Test
  * 呼び出しカウントは、atLeast、atMost、またはexactlyパラメーターで確認できる
  */
 class VerificationTest {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

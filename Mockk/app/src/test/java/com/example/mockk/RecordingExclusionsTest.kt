@@ -11,7 +11,6 @@ import org.junit.Test
  * それほど重要ではない呼び出しを記録から除外するには、excludeRecordsを使用できる
  */
 class RecordingExclusionsTest {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

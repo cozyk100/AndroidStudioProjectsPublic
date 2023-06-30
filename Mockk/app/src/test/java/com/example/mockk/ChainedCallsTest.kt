@@ -12,7 +12,6 @@ import org.junit.Test
  * 連鎖呼び出し(Chained calls)
  */
 class ChainedCallsTest {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

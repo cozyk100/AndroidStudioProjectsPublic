@@ -1,8 +1,10 @@
 package com.example.mockk
 
 import io.mockk.every
+import io.mockk.junit4.MockKRule
 import io.mockk.mockk
 import org.junit.Assert.assertEquals
+import org.junit.Rule
 import org.junit.Test
 
 /**
@@ -23,6 +25,9 @@ class HierarchicalMockingTest {
         val city: String
         val zip: String
     }
+
+    @get:Rule
+    val mockkRule = MockKRule(this)
 
     @Test
     fun hierarchicalMocking() {

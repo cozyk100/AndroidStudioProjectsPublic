@@ -24,7 +24,6 @@ class ExtendFunctionTest {
         fun Obj.extensionFunc() = value + 5
     }
 
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

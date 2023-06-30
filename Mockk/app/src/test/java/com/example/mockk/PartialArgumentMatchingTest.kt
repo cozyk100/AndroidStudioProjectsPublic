@@ -12,7 +12,6 @@ import org.junit.Test
  * 部分引数マッチング(Partial argument matching)
  */
 class PartialArgumentMatchingTest {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

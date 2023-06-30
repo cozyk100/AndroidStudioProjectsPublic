@@ -13,7 +13,6 @@ import org.junit.Test
  * スパイはモックと実際のオブジェクトを混ぜることができます。
  */
 class SpyTest {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

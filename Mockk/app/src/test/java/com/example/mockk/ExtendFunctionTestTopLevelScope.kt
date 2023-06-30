@@ -14,7 +14,6 @@ import org.junit.Test
  * モジュール全体の拡張機能をモックするには、モジュールのクラス名を引数としてmockkStatic(...)をビルドする必要があります。
  */
 class ExtendFunctionTestTopLevelScope {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

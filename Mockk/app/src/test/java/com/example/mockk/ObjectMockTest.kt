@@ -18,7 +18,6 @@ class ObjectMockTest {
         fun add(a: Int, b: Int) = a + b
     }
 
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

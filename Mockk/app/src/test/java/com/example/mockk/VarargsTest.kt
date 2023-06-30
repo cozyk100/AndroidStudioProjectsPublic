@@ -16,7 +16,6 @@ class VarargsTest {
         fun manyMany(vararg x: Any): Int
     }
 
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 

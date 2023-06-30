@@ -11,7 +11,6 @@ import org.junit.Test
  * CapturingSlotまたはMutableListへの引数をキャプチャできる(mockitoのcaptureと同じようなもんか？)
  */
 class CaptureMockTest {
-    // とりあえず、無くても動くが、必須なのか？
     @get:Rule
     val mockkRule = MockKRule(this)
 
